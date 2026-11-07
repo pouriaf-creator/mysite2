@@ -74,7 +74,7 @@
                 <a href="">Blog</a>
                 <ul>
                   <li><a href="{% url 'blog:index' %}">Blog Home</a></li>
-                  <li><a href="{% url 'blog:single' %}">Blog Single</a></li>
+                  <li><a href="{% url 'blog:index' %}">Blog Single</a></li>
                 </ul>
               </li>
               <li class="menu-has-children">
@@ -231,10 +231,8 @@
                     src="{% static 'img/blog/feature-img1.jpg' %}"
                     alt=""
                   />
-                </div>
-                <a class="posts-title" href="#"
-                  ><h3>{{post.title}}</h3></a
-                >
+                </div>                             
+                <a class="posts-title" href="{% url 'blog:single' post.id %}"> <h3>{{post.title}}</h3></a>
                 <p class="excert">
                   {{ post.content }}
                 </p>
@@ -323,7 +321,7 @@
                       />
                     </div>
                     <div class="details">
-                      <a href="{% url 'blog:single' %}"
+                      <a href="{% url 'blog:index' %}"
                         ><h6>Space The Final Frontier</h6></a
                       >
                       <p>02 Hours ago</p>
@@ -340,7 +338,7 @@
                       />
                     </div>
                     <div class="details">
-                      <a href="{% url 'blog:single' %}"
+                      <a href="{% url 'blog:index' %}"
                         ><h6>The Amazing Hubble</h6></a
                       >
                       <p>02 Hours ago</p>
@@ -357,7 +355,7 @@
                       />
                     </div>
                     <div class="details">
-                      <a href="{% url 'blog:single' %}"
+                      <a href="{% url 'blog:index' %}"
                         ><h6>Astronomy Or Astrology</h6></a
                       >
                       <p>02 Hours ago</p>
@@ -374,7 +372,7 @@
                       />
                     </div>
                     <div class="details">
-                      <a href="{% url 'blog:single' %}"
+                      <a href="{% url 'blog:index' %}"
                         ><h6>Asteroids telescope</h6></a
                       >
                       <p>02 Hours ago</p>
