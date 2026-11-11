@@ -14,10 +14,28 @@ def blog_view(request):
     return render(request,'blog/blog-home.html',context)
 
 
-def blog_single(request,pid):
-    posts = Post.objects.filter(status=1)
+def blog_single(request, pid):
+    posts = Post.objects.filter(status=1).order_by("id")
     post = get_object_or_404(posts, pk=pid)
-    context = {'post': post}
+    
+    posts_list = list(posts)
+    
+    current_index = posts_list.index(post)
+    
+    previous_post = None
+    next_post = None
+    
+    if current_index > 0:
+        previous_post = posts_list[current_index - 1]
+        
+    if current_index < len(posts_list) - 1:
+        next_post = posts_list[current_index + 1]
+    
+    context = {
+        'post': post,
+        'previous_post': previous_post,
+        'next_post':next_post
+        }
     return render(request,'blog/blog-single.html', context)
 
 
