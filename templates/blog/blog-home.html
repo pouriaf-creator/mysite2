@@ -234,7 +234,8 @@
                 </div>                             
                 <a class="posts-title" href="{% url 'blog:single' post.id %}"> <h3>{{post.title}}</h3></a>
                 <p class="excert">
-                  {{post.content|truncatechars:100}}
+                {{post.content|truncatewords:2}}
+                  <!-- {{post.content|truncatechars:100}} -->
                   <!-- {{post.image.url}} -->
                 </p>
                 <a href="#" class="primary-btn"
