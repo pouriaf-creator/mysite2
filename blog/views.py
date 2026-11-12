@@ -44,3 +44,7 @@ def test(request,pid):
     post = get_object_or_404(Post,pk=pid)
     context = {'post':post}
     return render(request,'test.html',context)
+
+
+def test_page(request):
+    return render(request, 'test.html')
