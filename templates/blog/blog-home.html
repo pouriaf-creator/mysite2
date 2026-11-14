@@ -1,4 +1,5 @@
 {% load static %}
+{% load blog-tags %}
 <!doctype html>
 <html lang="zxx" class="no-js">
   <head>
@@ -276,15 +277,7 @@
     
               {% include 'blog/blog-writer.html' %}
 
-              <!-- {% include 'blog/blog-popular-post.html' %} -->
-
-              {% include 'blog/blog-ads.html' %}
-
-              {% include 'blog/blog-post-category.html' %}
-
-              {% include 'blog/blog-newsletter.html' %}
-          
-              {% include 'blog/blog-tags.html' %}
+              {% postcategories %}
              
 
             </div>
