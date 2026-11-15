@@ -8,8 +8,10 @@ from django.db.models import F
 #     context = {'posts':posts}
 #     return render(request,'blog/blog-home.html',context)
 
-def blog_view(request):
+def blog_view(request,cat_name=None):
     posts = Post.objects.filter(status=1)
+    if cat_name:
+        posts = posts.filter(category__name=cat_name)
     context = {'posts':posts}
     return render(request,'blog/blog-home.html',context)
 
@@ -52,7 +54,7 @@ def test_page(request):
 
 def blog_category(request,cat_name):
     posts = Post.objects.filter(status=1)
-    posts = posts.filter(category__name=cat_name)
+    
     context = {'posts': posts}    
     return render(request,'blog/blog-home.html', context)
     
