@@ -11,5 +11,6 @@ urlpatterns = [
     path('test',test_page,name='test_page'),
     path('<int:pid>',blog_single,name='single'),
     path('category/<str:cat_name>',blog_view,name='category'),
+    path('author/<str:author_username>',blog_view,name='author'),
     path('post-<int:pid>',test,name='test'),
 ]
