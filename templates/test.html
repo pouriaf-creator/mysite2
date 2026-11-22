@@ -7,8 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-        <h1>Testing page</h1>
-        <p>test:</p>
-        {% popularposts %}
+       <form action="{% url 'website:test' %}" method="post">
+            {% csrf_token %}
+            <label for="">name:</label>
+            <input type="text" name="name"><br>
+            <label for="">email:</label>
+            <input type="email" name="email"><br>
+            <label for="">subject:</label>
+            <input type="text" name="subject"><br>
+            <label for="">message:</label>
+            <input type="text" name="message"><br>
+            <button type="submit" >submit</button>
+       </form>
 </body>
 </html>
