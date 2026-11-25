@@ -9,14 +9,7 @@
 <body>
        <form action="{% url 'website:test' %}" method="post">
             {% csrf_token %}
-            <label for="">name:</label>
-            <input type="text" name="name"><br>
-            <label for="">email:</label>
-            <input type="email" name="email"><br>
-            <label for="">subject:</label>
-            <input type="text" name="subject"><br>
-            <label for="">message:</label>
-            <input type="text" name="message"><br>
+            {{form.as_p}}
             <button type="submit" >submit</button>
        </form>
 </body>
