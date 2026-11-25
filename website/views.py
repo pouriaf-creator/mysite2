@@ -18,7 +18,7 @@ def contact_view(request):
 def test_view(request):
     if request.method == 'POST':
        form = NameForm(request.POST)
-       if form.is_valid:
+       if form.is_valid():
            name = form.cleaned_data['name']
            email = form.cleaned_data['email']
            subject = form.cleaned_data['subject']
